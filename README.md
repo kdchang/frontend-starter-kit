@@ -21,6 +21,9 @@ $ npm start
 
 Check the browser `localhost:7777`
 
+## Documents
+1. [一看就懂的前端開發環境建置入門教學](http://blog.kdchang.cc/2016/11/05/how-to-establish-modern-front-end-development-environment-tutorial/)
+
 ## License
 MIT
 
