@@ -6,6 +6,9 @@ import browserify from 'browserify';
 import babelify from 'babelify';
 // 轉成 gulp 讀取的 vinyl（黑膠）流
 import source from 'vinyl-source-stream';
+import buffer from 'vinyl-buffer';
+import sourcemaps from 'gulp-sourcemaps';
+import gutil from 'gulp-util';
 import image from 'gulp-image';
 
 const dirs = {
@@ -42,6 +45,11 @@ gulp.task('scripts', function(){
     .transform(babelify)
     .bundle()
     .pipe(source('bundle.js'))
+    .pipe(buffer()) // <----- convert from streaming to buffered vinyl file object
+    .pipe(sourcemaps.init({loadMaps: true}))
+        .pipe(uglify())
+        .on('error', gutil.log)
+    .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(scriptsPaths.dest));
 });
 
