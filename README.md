@@ -1,5 +1,5 @@
 # Frontend Starter Kit
-Just a front-end development boilerplate. (node/npm/bower/gulp/sass/babel/browserify) 
+Just a light-weight front-end development boilerplate. (NodeJS/NPM/ES6/Bower/Gulp/Sass/Babel/Babelify/Browserify) 
 
 ## Usage
 

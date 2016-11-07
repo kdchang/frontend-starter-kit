@@ -1,1 +1,1 @@
-console.log('hello front end starter kit!!');d
+console.log('hello front end starter kit!!');
