@@ -1,0 +1,18 @@
+{
+  "name": "frontend-starter-kit",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "kdchang"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/kdchang/frontend-starter-kit",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

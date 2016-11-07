@@ -1,0 +1,32 @@
+{
+  "name": "frontend-starter-kit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kdchang/frontend-starter-kit.git"
+  },
+  "author": "kdchang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kdchang/frontend-starter-kit/issues"
+  },
+  "homepage": "https://github.com/kdchang/frontend-starter-kit#readme",
+  "devDependencies": {
+    "babel-core": "^6.18.2",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-register": "^6.18.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.1.1",
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-image": "^2.7.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^2.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}
