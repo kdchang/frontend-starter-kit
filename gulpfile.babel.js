@@ -21,6 +21,11 @@ const stylesPaths = {
   dest: `${dirs.dest}/css`
 };
 
+const htmlPaths = {
+  src: `${dirs.src}/*.html`,
+  dest: `${dirs.dest}`
+};
+
 const scriptsPaths = {
   src: `${dirs.src}/scripts/*.js`,
   dest: `${dirs.dest}/js`
@@ -50,7 +55,8 @@ gulp.task('scripts', function(){
         .pipe(uglify())
         .on('error', gutil.log)
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest(scriptsPaths.dest));
+    .pipe(gulp.dest(scriptsPaths.dest))
+    .pipe(connect.reload());
 });
 
 gulp.task('images', function() {
@@ -60,7 +66,7 @@ gulp.task('images', function() {
 });
 
 gulp.task('copy-html', function(){
-  return gulp.src(`${dirs.src}/*.html`).pipe(gulp.dest('dist'))
+  return gulp.src(htmlPaths.src).pipe(gulp.dest(htmlPaths.dest)).pipe(connect.reload());
 });
 
 gulp.task('server', function () {
@@ -74,6 +80,7 @@ gulp.task('server', function () {
 gulp.task('watch', function () {
   gulp.watch(stylesPaths.src, ['styles']);
   gulp.watch(scriptsPaths.src, ['scripts']);
+  gulp.watch(htmlPaths.src, ['copy-html']);
 });
 
 gulp.task('default', ['copy-html', 'scripts', 'styles', 'images', 'server', 'watch']);
