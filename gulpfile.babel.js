@@ -21,11 +21,6 @@ const stylesPaths = {
   dest: `${dirs.dest}/css`
 };
 
-const htmlPaths = {
-  src: `${dirs.src}/*.html`,
-  dest: `${dirs.dest}`
-};
-
 const scriptsPaths = {
   src: `${dirs.src}/scripts/*.js`,
   dest: `${dirs.dest}/js`
@@ -66,13 +61,9 @@ gulp.task('images', function() {
     .pipe(connect.reload());
 });
 
-gulp.task('copy-html', function(){
-  return gulp.src(htmlPaths.src).pipe(gulp.dest(htmlPaths.dest)).pipe(connect.reload());
-});
-
 gulp.task('server', function () {
   connect.server({
-    root: ['./dist'],
+    root: ['./'],
     livereload: true,
     port: 7777,
   });
@@ -82,8 +73,7 @@ gulp.task('watch', function () {
   gulp.watch(stylesPaths.src, ['styles']);
   gulp.watch(scriptsPaths.src, ['scripts']);
   gulp.watch(imagesPaths.src, ['images']);
-  gulp.watch(htmlPaths.src, ['copy-html']);
 });
 
-gulp.task('default', ['copy-html', 'scripts', 'styles', 'images', 'server', 'watch']);
-gulp.task('build', ['copy-html', 'scripts', 'styles', 'images']);
+gulp.task('default', ['scripts', 'styles', 'images', 'server', 'watch']);
+gulp.task('build', ['scripts', 'styles', 'images']);
